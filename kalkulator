@@ -1,0 +1,62 @@
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+struct Kalkulator {
+    float bilangan1;
+    float bilangan2;
+    char operasi[10];
+};
+
+float tambah(float a, float b) {
+    return a + b;
+}
+
+float kurang(float a, float b) {
+    return a - b;
+}
+
+float kali(float a, float b) {
+    return a * b;
+}
+
+float bagi(float a, float b) {
+    return a / b;
+}
+
+int main() {
+    Kalkulator kalkulator;
+    float hasil;
+
+    cout << "Masukkan bilangan pertama: ";
+    cin >> kalkulator.bilangan1;
+
+    cout << "Masukkan bilangan kedua: ";
+    cin >> kalkulator.bilangan2;
+
+    cout << "Masukkan operasi (+, -, *, /): ";
+    cin >> kalkulator.operasi;
+
+    if (strcmp(kalkulator.operasi, "+") == 0) {
+        hasil = tambah(kalkulator.bilangan1, kalkulator.bilangan2);
+        cout << "Hasil dari " << kalkulator.bilangan1 << " + " << kalkulator.bilangan2 << " = " << hasil << endl;
+    }
+    else if (strcmp(kalkulator.operasi, "-") == 0) {
+        hasil = kurang(kalkulator.bilangan1, kalkulator.bilangan2);
+        cout << "Hasil dari " << kalkulator.bilangan1 << " - " << kalkulator.bilangan2 << " = " << hasil << endl;
+    }
+    else if (strcmp(kalkulator.operasi, "*") == 0) {
+        hasil = kali(kalkulator.bilangan1, kalkulator.bilangan2);
+        cout << "Hasil dari " << kalkulator.bilangan1 << " * " << kalkulator.bilangan2 << " = " << hasil << endl;
+    }
+    else if (strcmp(kalkulator.operasi, "/") == 0) {
+        hasil = bagi(kalkulator.bilangan1, kalkulator.bilangan2);
+        cout << "Hasil dari " << kalkulator.bilangan1 << " / " << kalkulator.bilangan2 << " = " << hasil << endl;
+    }
+    else {
+        cout << "Operasi tidak valid!" << endl;
+    }
+
+    return 0;
+}
