@@ -1,0 +1,33 @@
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+struct Mahasiswa {
+  char nama[50];
+  int nim;
+  float ipk;
+};
+
+void inputMahasiswa(Mahasiswa *mhs) {
+  cout << "Masukkan nama: ";
+  cin.getline(mhs->nama, 50);
+  cout << "Masukkan NIM: ";
+  cin >> mhs->nim;
+  cout << "Masukkan IPK: ";
+  cin >> mhs->ipk;
+}
+
+void outputMahasiswa(const Mahasiswa *mhs) {
+  cout << "Nama: " << mhs->nama << endl;
+  cout << "NIM: " << mhs->nim << endl;
+  cout << "IPK: " << mhs->ipk << endl;
+}
+
+int main() {
+  Mahasiswa mhs1;
+  inputMahasiswa(&mhs1);
+  outputMahasiswa(&mhs1);
+
+  return 0;
+}
