@@ -1,0 +1,41 @@
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+// Deklarasi Struct
+struct Mahasiswa {
+    char nama[50];
+    int usia;
+};
+
+// Deklarasi Function
+void tampilkan(Mahasiswa *mhs);
+
+int main() {
+    // Inisialisasi Struct
+    Mahasiswa mhs;
+    
+    // Input data ke Struct
+    cout << "Masukkan nama: ";
+    cin.getline(mhs.nama, 50);
+    
+    cout << "Masukkan usia: ";
+    cin >> mhs.usia;
+    
+    // Deklarasi Pointer
+    Mahasiswa *mhsPtr;
+    mhsPtr = &mhs;
+    
+    // Memanggil Function
+    tampilkan(mhsPtr);
+    
+    return 0;
+}
+
+// Definisi Function
+void tampilkan(Mahasiswa *mhs) {
+    cout << "\nData Mahasiswa\n";
+    cout << "Nama: " << mhs->nama << endl;
+    cout << "Usia: " << mhs->usia << endl;
+}
